@@ -2,15 +2,7 @@
 # Drum Pad machine
 
 import keyboard
-import pygame
-
-def play_sound(file_path):
-    pygame.mixer.init()
-    try:
-        sound = pygame.mixer.Sound(file_path)
-        sound.play()
-    except pygame.error as e:
-        print("Ошибка воспроизведения звука:", e)
+from play_sound_by_pygame import play_sound
 
 def drum_pad():
     while True:
@@ -32,4 +24,3 @@ def drum_pad():
             play_sound("cyborg-05-TTweat.wav")
         if keyboard.is_pressed("3"):
             play_sound("cyborg-06-Warp.wav")
-
